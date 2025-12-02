@@ -11,7 +11,7 @@
 				v-model="inputLabel"
 				v-bind="inputPropsInner">
 			</up-input>
-			<view class="input-cover"></view>
+			<cover-view class="input-cover"></cover-view>
 		</view>
 		<u-popup
 			:show="show || (hasInput && showByClickInput)"
@@ -166,9 +166,12 @@ export default {
 					if (n != null) {
 						n.forEach((element, index) => {
 							let currentCols = this.getColumnValues(index)
-							if (currentCols && Object.prototype.toString.call(currentCols) === '[object Object]') {
+							if(!Array.isArray(currentCols) && currentCols.length===0) {
+								return
+							}
+							if (typeof currentCols[0] === 'object') {
 								currentCols.forEach((item, index2) => {
-									if (item[this.keyName] == element) {
+									if (item[this.valueName] == element) {
 										arr.push(index2)
 									}
 								})
@@ -317,7 +320,7 @@ export default {
 			// 通过对比前后两次的列索引，得出当前变化的是哪一列
 			for (let i = 0; i < value.length; i++) {
 				let item = value[i]
-				if (item !== (this.lastIndex[i] || 0)) { // 把undefined转为合法假值0
+				if (item !== undefined && item !== (this.lastIndex[i] || 0)) { // 把undefined转为合法假值0
 					// 设置columnIndex为当前变化列的索引
 					columnIndex = i
 					// index则为变化列中的变化项的索引

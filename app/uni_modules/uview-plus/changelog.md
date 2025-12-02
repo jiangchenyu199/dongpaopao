@@ -1,5 +1,79 @@
+## 3.6.19（2025-12-01）
+fix: 修复商品SKU组件i18n
+
+fix: Choose组件会有width警告提示 #915
+
+## 3.6.18（2025-11-30）
+feature: upload组件file模式支持微信小程序chooseMessageFile的extension属性 #913
+
+## 3.6.17（2025-11-18）
+add: picker-data支持表单验证
+
+## 3.6.16（2025-11-18）
+improvment: 优化下拉菜单示例
+
+## 3.6.15（2025-11-10）
+fix: 修复tabs添加activeStyle切换后滑块无法居中
+
+## 3.6.14（2025-11-07）
+fix: 修复引用拼写
+
+## 3.6.13（2025-11-06）
+improvment: 组合式API升级之gap示例改造
+
+## 3.6.12（2025-11-05）
+improvment: empty示例改为组合式API
+
+## 3.6.11（2025-11-05）
+improvment: divider示例改为组合式API
+
+## 3.6.10（2025-11-04）
+improvment: checkbox示例改为组合式API
+
+## 3.6.9（2025-10-21）
+improvment: cell示例改为组合式API
+
+## 3.6.8（2025-10-20）
+imporvment: button示例改为组合式API
+
+## 3.6.7（2025-10-17）
+fix: 优化picker当前列判断
+
+## 3.6.6（2025-10-13）
+fix: 修复getWindowInfo微信小程序下报警告
+
+## 3.6.5（2025-10-11）
+🐛fix: 修复picker双向绑定 #753
+
+## 3.6.4（2025-10-09）
+🐛fix: import rpx2px function and add to exports in index.js
+
+## 3.6.3（2025-10-09）
+fix: 修复getWindowInfo微信小程序下报警告
+
+## 3.6.2（2025-10-05）
+fix: 修复picker双向绑定 #753
+
+## 3.6.1（2025-10-01）
+fix: 修复poster海报组件微信小程序图片绘制失败
+
+## 3.6.0（2025-09-30）
+fix: 修复parse事件报错及统一事件名称小写
+
+## 3.5.57（2025-09-30）
+improvment: 更换部分资源域名提升访问速度
+
+## 3.5.56（2025-09-29）
+fix: 修复picker和datetime-picker在部分原生渲染时hasInput触发键盘弹起
+
+## 3.5.55（2025-09-29）
+feat: waterfall新增after-add-one和after-add-all事件
+
+## 3.5.54（2025-09-25）
+🐞 fix: 解决索引列表初始化时获取不到高度导致的字母列表异常
+
 ## 3.5.53（2025-09-19）
-imorovment: back-top示例组合式API改造
+improvment: back-top示例组合式API改造
 
 ## 3.5.52（2025-09-19）
 fix: 优化tabbar的borderColor优先级

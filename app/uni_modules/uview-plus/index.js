@@ -22,7 +22,7 @@ import calc from './libs/function/calc.js'
 // 浮点计算
 import digit from './libs/function/digit.js'
 // 公共文件写入的方法
-import index from './libs/function/index.js'
+import index, { rpx2px } from './libs/function/index.js'
 
 // 配置信息
 import config from './libs/config/config.js'
@@ -46,7 +46,7 @@ import i18n, { t } from './libs/i18n/index.js'
 
 // 导出
 let themeType = ['primary', 'success', 'error', 'warning', 'info'];
-export { route, http, debounce, throttle, calc, digit, platform, themeType, mixin, mpMixin, props, color, test, zIndex, fontUtil, i18n ,t}
+export { route, http, debounce, throttle, calc, digit, platform, themeType, mixin, mpMixin, props, color, test, zIndex, fontUtil, i18n , rpx2px, t}
 export * from './libs/function/index.js'
 export * from './libs/function/colorGradient.js'
 
