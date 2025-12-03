@@ -63,16 +63,25 @@
 			url: '/service/list',
 			method: 'GET'
 		}).then((res) => {
-			serviceList.value = res.data
-		})
+			// 添加'全部'分类到列表开头
+			serviceList.value = [
+				{ serviceId: '', serviceName: '全部', bgColor: '#1a73e8' }
+			].concat(res.data);
+		});
 	}
 
 	// 加载订单列表
 	const loadOrders = async (serviceId: string) => {
 		loading.value = true;
 		try {
+			// 构建请求URL，当serviceId为空时不添加该参数
+			let url = '/order/hall?uid=' + userInfo.uid;
+			if (serviceId) {
+				url += "&serviceId=" + serviceId;
+			}
+			
 			await request({
-				url: '/order/hall?uid=' + userInfo.uid + "&serviceId=" + serviceId,
+				url: url,
 				method: 'GET'
 			}).then((res) => {
 				orders.value = res.data
@@ -102,7 +111,9 @@
 
 	// 刷新数据
 	const handleRefresh = () => {
-		loadOrders();
+		// 刷新时使用当前选中的分类
+		const currentService = serviceList.value[currentTab.value];
+		loadOrders(currentService.serviceId);
 		uni.showToast({
 			title: '刷新中...',
 			icon: 'loading',
@@ -119,14 +130,13 @@
 	};
 
 	/* 页面加载 */
-	onLoad(() => {
+	onLoad(async () => {
 		loadServices();
 	})
-	
+
 	/* 页面展示 */
-	onShow(() => {
-		console.log(serviceList[0]);
-		loadOrders();
+	onShow(async (serviceId) => {
+		loadOrders(serviceId);
 	});
 </script>
 
